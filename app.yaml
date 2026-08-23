@@ -1,0 +1,23 @@
+name: ai-test-app
+description: Throwaway repo proving app.yaml's ai:true wiring works end-to-end -- delete after verification.
+owner: zainey
+
+runtime:
+  port: 8080
+  memory_mb: 256
+  replicas: 1
+
+domains:
+  staging: ai-test-app-staging.zaindroid.me
+  production: ai-test-app.zaindroid.me
+
+dependencies:
+  postgres: false
+  redis: false
+  storage: false
+  internal: []
+
+ai: true
+
+health:
+  path: /health
